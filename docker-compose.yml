@@ -1,0 +1,66 @@
+version: "3.9"
+
+services:
+ adminer-service:
+  image: adminer
+  restart: unless-stopped
+  container_name: adminer
+  depends_on:
+   - postgres-service
+  networks:
+   - pet-ware
+  ports:
+   - "8085:8080"
+  environment:
+   - ADMINER_DESIGN=pepa-linha-dark
+
+ fastapi-service:
+  build:
+   context: .
+   dockerfile: Dockerfile
+  image: fastapi
+  container_name: fastapi
+  restart: unless-stopped
+  depends_on:
+   - postgres-service
+  ports:
+   - "8005:8000"
+  environment:
+   - POSTGRES_SERVER=postgres
+   - POSTGRES_PORT=${POSTGRES_PORT}
+   - POSTGRES_DB=${POSTGRES_DB}
+   - POSTGRES_USER=${POSTGRES_USER}
+   - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+  networks:
+   - pet-ware
+  volumes:
+   - ".:/app"
+  # command: "./startup.sh"
+
+ smtp-service:
+  image: axllent/mailpit
+  restart: unless-stopped
+  container_name: smtp
+  networks:
+   - pet-ware
+  ports:
+   - "8030:8025"
+   - "1030:1025"
+
+ postgres-service:
+  image: postgres:14
+  container_name: postgres
+  environment:
+   - POSTGRES_USER=postgres
+   - POSTGRES_PASSWORD=Secret$123
+   - POSTGRES_DB=fastapi
+  networks:
+   - pet-ware
+  volumes:
+   - pet-ware_postgres_data:/var/lib/postgresql/data
+
+networks:
+ pet-ware:
+volumes:
+ pet-ware_postgres_data:
+  external: true
