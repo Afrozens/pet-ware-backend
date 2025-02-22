@@ -6,13 +6,11 @@ from sqlalchemy.orm import relationship
 from app.models import BaseModel
 
 class Rol(BaseModel):
-    __tablename__ = 'roles'
+    __tablename__ = 'categories'
 
     id = Column(
         UUID(as_uuid=True), primary_key=True,  index=True, default=uuid4)
     name = Column(String(100), index=True)
     description = Column(Text)
-
-    #relaciones
 
     users = relationship('User', back_populates="role", uselist=False)

@@ -8,7 +8,18 @@ from app.router import api_router
 settings = get_settings()
 
 def create_application():
-    application = FastAPI(title=settings.APP_NAME, version="1.0.0",
+    application = FastAPI(
+        title="Pet-Ware",
+        version="0.0.1",
+        description="Bienvenido a Pet-Ware.",
+        docs_url="/docs", 
+        swagger_ui_parameters={
+            "defaultModelsExpandDepth": -1, 
+            "defaultModelExpandDepth": -1,   
+            "docExpansion": "none",
+            "persistAuthorization": True,    
+            "tryItOutEnabled":True,           
+        }
     )
 
     application.include_router(api_router)
