@@ -24,7 +24,7 @@ services:
   depends_on:
    - postgres-service
   ports:
-   - "8005:8000"
+   - "8000:8000"
   environment:
    - POSTGRES_SERVER=postgres
    - POSTGRES_PORT=${POSTGRES_PORT}

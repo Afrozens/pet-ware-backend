@@ -30,15 +30,15 @@ class Settings(BaseSettings):
     SECRET_KEY: str = os.environ.get("SECRET_KEY")
 
     # SMTP 
-    SMTP_EMAIL_CURRENT: str = os.environ.get('SMTP_EMAIL_CURRENT', 'test@gmail.com')
-    SMTP_EMAIL_PASSWORD: str = os.environ.get('SMTP_EMAIL_PASSWORD', 'test@password')
-    SMTP_EMAIL_PORT: int = os.environ.get('SMTP_EMAIL_PORT', 1025)
-    SMTP_SERVER: str = os.environ.get('SMTP_SERVER', 'smtp')
-    SMTP_USER: str = os.environ.get('SMTP_USER', 'pet')
-    SMTP_PASS: str = os.environ.get('SMTP_PASS', 'pet$$123')
-    SMTP_MAIL: str = os.environ.get('SMTP_MAIL', 'pet@gmail.com')
-    SMTP_PORT: int = os.environ.get('SMTP_PORT', 1025)
-    SMTP_TLS: bool = os.environ.get('SMTP_TLS', False)
+    #SMTP_EMAIL_CURRENT: str = os.environ.get('SMTP_EMAIL_CURRENT')
+    #SMTP_EMAIL_PASSWORD: str = os.environ.get('SMTP_EMAIL_PASSWORD')
+    #SMTP_EMAIL_PORT: int = os.environ.get('SMTP_EMAIL_PORT')
+    #SMTP_SERVER: str = os.environ.get('SMTP_SERVER', 'smtp')
+    #SMTP_USER: str = os.environ.get('SMTP_USER')
+    #SMTP_PASS: str = os.environ.get('SMTP_PASS')
+    #SMTP_MAIL: str = os.environ.get('SMTP_MAIL')
+    #SMTP_PORT: int = os.environ.get('SMTP_PORT')
+    #SMTP_TLS: bool = os.environ.get('SMTP_TLS')
 
     # FRONTEND
     FRONTEND_HOST: str = os.environ.get('FRONTEND_HOST', 'http://localhost:3000')
@@ -53,14 +53,15 @@ class Settings(BaseSettings):
     FIRST_ADMIN_ACCOUNT_LASTNAME: str = os.environ.get('FIRST_ADMIN_ACCOUNT_LASTNAME')
 
     # S3 BUCKET
-    BUCKET_REGION: str = os.environ.get('BUCKET_REGION')
-    BUCKET_NAME: str = os.environ.get('BUCKET_NAME')
-    BUCKET_KEY: str = os.environ.get('BUCKET_KEY')
-    BUCKET_SECRET: str = os.environ.get('BUCKET_SECRET')
+    #BUCKET_REGION: str = os.environ.get('BUCKET_REGION')
+    #BUCKET_NAME: str = os.environ.get('BUCKET_NAME')
+    #BUCKET_KEY: str = os.environ.get('BUCKET_KEY')
+    #BUCKET_SECRET: str = os.environ.get('BUCKET_SECRET')
 
     # MERCADO PAGO
-    ACCESS_KEY_MERCADO_PAGO: str = os.environ.get('ACCESS_KEY_MERCADO_PAGO')
-    MERCADOPAGO_WEBHOOK_SECRET: str = os.environ.get('MERCADOPAGO_WEBHOOK_SECRET')
+
+    #ACCESS_KEY_MERCADO_PAGO: str = os.environ.get('ACCESS_KEY_MERCADO_PAGO')
+    #MERCADOPAGO_WEBHOOK_SECRET: str = os.environ.get('MERCADOPAGO_WEBHOOK_SECRET')
 
     # GOOGLE MAPS
     GOOGLE_MAPS_KEY: str = os.environ.get('GOOGLE_MAPS_KEY')
