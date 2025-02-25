@@ -15,7 +15,3 @@ class Role:
         "name": "client",
         "description": "Role for the usual user who enters the application, to consume services, activities, etc"
     }
-    PREMIUM = {
-        "name": "premium",
-        "description": "Role for the user who has a premium account"
-    }

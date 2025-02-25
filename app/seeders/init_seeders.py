@@ -9,13 +9,6 @@ settings = get_settings()
 
 def init_db(db: Session) -> None:
 # Create Role If They Don't Exist
-    premium_role = role.get_by_name(db=db, name=Role.PREMIUM["name"])
-    if not premium_role:
-        premium_role_in = Rol(
-            name=Role.PREMIUM["name"], description=Role.PREMIUM["description"]
-        )   
-        role.create(db, obj_in=premium_role_in)
-
     client_role = role.get_by_name(db=db, name=Role.CLIENT["name"])
     if not client_role:
         user_role_in = Rol(
