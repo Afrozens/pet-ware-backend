@@ -21,3 +21,6 @@ class File(BaseModel):
 
     # relations
     user = relationship("User", back_populates="files", uselist=False)
+    user_history_payment = relationship('UserHistoryPayment', back_populates="user_service_get", uselist=False)
+    history_payment = relationship('HistoryPayment', back_populates="user_service_get", uselist=False)
+

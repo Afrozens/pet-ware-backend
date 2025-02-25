@@ -5,7 +5,7 @@ from sqlalchemy.orm import relationship
 
 from app.models import BaseModel
 
-class Rol(BaseModel):
+class Category(BaseModel):
     __tablename__ = 'categories'
 
     id = Column(
@@ -13,4 +13,6 @@ class Rol(BaseModel):
     name = Column(String(100), index=True)
     description = Column(Text)
 
-    users = relationship('User', back_populates="role", uselist=False)
+    # relations
+    client_services = relationship('ClientService', back_populates="category")
+

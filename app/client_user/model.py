@@ -21,4 +21,8 @@ class ClientUser(BaseModel):
 
     #relaciones
     user = relationship('User', back_populates="client_user", uselist=False)
-
+    frequently_askeds = relationship('ClientFrequentlyAskedQuestions', back_populates="client_user")
+    client_services = relationship('ClientService', back_populates="client_user")
+    client_review_services = relationship('ClientReviewService', back_populates="client_user")
+    user_service_get = relationship('UserServiceGet', back_populates="client_user")
+    user_history_payment = relationship('UserHistoryPayment', back_populates="client_user")

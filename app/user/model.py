@@ -11,7 +11,7 @@ class User(BaseModel):
 
     id = Column(
         UUID(as_uuid=True), primary_key=True,  index=True, default=uuid4)
-    roles_id = Column(UUID(as_uuid=True), ForeignKey('roles.id'), nullable=True)
+    roles_id = Column(UUID(as_uuid=True), ForeignKey('roles.id'))
     
     profile_picture = Column(UUID(as_uuid=True), nullable=True)
     email = Column(String(150), unique=True)
@@ -33,4 +33,7 @@ class User(BaseModel):
     role = relationship('Rol', back_populates="users", uselist=False)
     client_user = relationship('ClientUser', back_populates="user", uselist=False)
     files = relationship("File", back_populates="user")
+    client_review_services = relationship('ClientReviewService', back_populates="user")
+    user_service_get = relationship('UserServiceGet', back_populates="user")
+    user_history_payment = relationship('UserHistoryPayment', back_populates="user")
 
