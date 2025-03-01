@@ -9,4 +9,4 @@ class ServiceUser(CRUDBase[User, UserCreate, UserUpdate]):
     def get_by_email(self, db: Session, *, email: str) -> Optional[User]:
         return db.query(self.model).filter(User.email == email).first()
 
-serviceUser = ServiceUser(User)
+service_user = ServiceUser(User)

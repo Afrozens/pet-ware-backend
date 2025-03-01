@@ -14,6 +14,15 @@ class UserBase(BaseModel):
     phone_number: str = None
     address: str = None
 
+class UserSaveConsumer(BaseModel):
+    email: str = None
+    first_name: str = None
+    last_name: str = None
+    phone_number: str = None
+    type_document: str = None
+    document: str = None
+    password: str
+
 class UserCreate(UserBase):
     pass
 

@@ -7,11 +7,11 @@ class Role:
         "name": "administrador",
         "description": "The highest level of authorization in the application"
     }
-    SERVICE = {
-        "name": "service provisioner",
-        "description": "Role for service provisioner, add services, activities, etc"
+    CONSUMER = {
+        "name": "consumer",
+        "description": "Role for the usual user who enters the application, to consume services, activities, etc"
     }
     CLIENT = {
-        "name": "client",
-        "description": "Role for the usual user who enters the application, to consume services, activities, etc"
+        "name": "service_provisioner",
+        "description": "Role for service provisioner, add services, activities, etc"
     }

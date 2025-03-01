@@ -6,6 +6,7 @@ from sqlalchemy.orm import Session
 from app.auth.schema import Email, Login, RefreshTokenRequest, Reset, VerifyUser
 from app.database import get_session
 from app.auth.controller import auth as auth_controller
+from app.user.schema import UserSaveConsumer
 
 router = APIRouter()
 
@@ -31,7 +32,7 @@ async def user_logout():
 
 @router.post('/verify', status_code=status.HTTP_200_OK)
 async def verify_user_account(data: VerifyUser, session: Session = Depends(get_session)):
-    await auth_controller.activate_user_account(data, session)
+    await auth_controller.post_activate_user_account(data, session)
     return JSONResponse({"message": "account-activated-success"})
 
 @router.post('/forgot-password', status_code=status.HTTP_200_OK)
@@ -43,3 +44,11 @@ async def forgot_password(data: Email, background_tasks: BackgroundTasks, sessio
 async def reset_password(data: Reset, session: Session = Depends(get_session)):
     await auth_controller.put_reset_user_password(obj_in=data, db=session)
     return JSONResponse(content={"message": "password-updated"})
+
+@router.post('/register/user', status_code=status.HTTP_201_CREATED)
+async def register_user(data: UserSaveConsumer, background_tasks: BackgroundTasks, session: Session = Depends(get_session)):
+    await auth_controller.post_register_consumer(db=session, background_tasks=background_tasks, obj_in=data)
+
+@router.post('/register/client', status_code=status.HTTP_201_CREATED)
+async def register_client(data: UserSaveConsumer, background_tasks: BackgroundTasks, session: Session = Depends(get_session)):
+    await auth_controller.post_register_client(db=session, background_tasks=background_tasks, obj_in=data)

@@ -16,10 +16,10 @@ def init_db(db: Session) -> None:
         )   
         role.create(db, obj_in=user_role_in)
 
-    service_provisioner_role = role.get_by_name(db=db, name=Role.SERVICE["name"])
+    service_provisioner_role = role.get_by_name(db=db, name=Role.CONSUMER["name"])
     if not service_provisioner_role:
         agent_role_in = Rol(
-            name=Role.SERVICE["name"], description=Role.SERVICE["description"]
+            name=Role.CONSUMER["name"], description=Role.CONSUMER["description"]
         )
         role.create(db, obj_in=agent_role_in)
 
