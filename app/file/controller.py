@@ -4,7 +4,7 @@ import logging
 
 from app.settings import get_settings
 from app.aws.service import S3Service
-from app.file.service import serviceFile
+from app.file.service import service_file
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -16,7 +16,7 @@ class ControllerFile():
     async def get_image_by(self, db: Session, *, file_id: str):
         try:
             url_s3_file = None
-            image = await serviceFile.read_file(db=db, file_id=file_id)
+            image = await service_file.read_file(db=db, file_id=file_id)
             if image:
                 url_s3_file = s3_service.download_file(f"{image.folder}/{image.name}", settings.BUCKET_NAME)
             return url_s3_file

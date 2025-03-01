@@ -8,7 +8,7 @@ from app.file.schema import FileSave, FileInDBBase
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-class ServiceFiles(CRUDBase[File, FileSave, FileSave]):
+class service_files(CRUDBase[File, FileSave, FileSave]):
     async def read_file(self, db: Session, file_id: str):
         try:
             if not file_id:
@@ -18,11 +18,10 @@ class ServiceFiles(CRUDBase[File, FileSave, FileSave]):
             logger.error(f"Unexpected Error: {str(ex)}")
             raise f'There is a error: {str(ex)}'
 
-    async def create_file(self, db: Session, *, user_id: str, obj_in, agency_id: str | None = None) -> FileInDBBase:
+    async def create_file(self, db: Session, *, user_id: str, obj_in) -> FileInDBBase:
         try:
             db_obj = self.model(
                 user_id=user_id,
-                agency_id=agency_id,
                 **obj_in
             )
             file_current = self.create(db=db, obj_in=db_obj)
@@ -38,4 +37,4 @@ class ServiceFiles(CRUDBase[File, FileSave, FileSave]):
             logger.error(f"Unexpected Error: {str(ex)}")
             raise f'There is a error: {str(ex)}'
 
-serviceFile = ServiceFiles(File)
+service_file = service_files(File)
