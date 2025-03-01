@@ -58,11 +58,6 @@ class Settings(BaseSettings):
     #BUCKET_KEY: str = os.environ.get('BUCKET_KEY')
     #BUCKET_SECRET: str = os.environ.get('BUCKET_SECRET')
 
-    # MERCADO PAGO
-
-    #ACCESS_KEY_MERCADO_PAGO: str = os.environ.get('ACCESS_KEY_MERCADO_PAGO')
-    #MERCADOPAGO_WEBHOOK_SECRET: str = os.environ.get('MERCADOPAGO_WEBHOOK_SECRET')
-
     # GOOGLE MAPS
     GOOGLE_MAPS_KEY: str = os.environ.get('GOOGLE_MAPS_KEY')
 

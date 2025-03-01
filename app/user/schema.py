@@ -1,6 +1,9 @@
 from typing import Optional
 from pydantic import UUID4, BaseModel
 
+from app.client_user.schema import ClientUser
+from app.role.schema import Role
+
 class UserBase(BaseModel):
     profile_picture: UUID4
     email: str = None
@@ -40,3 +43,7 @@ class UserInDB(UserBase):
 
 class User(UserInDB):
     pass
+
+class UserWithRelations(User):
+    role: Optional[Role] = None
+    client_user: Optional[ClientUser] = None
