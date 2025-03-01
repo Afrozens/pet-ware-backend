@@ -1,6 +1,9 @@
 from datetime import datetime
-from typing import Optional
+from typing import Optional, List
 from pydantic import UUID4, BaseModel
+
+from app.client_frequently_asked_questions.schema import ClientFrenquentlyAskedQuestions
+from app.client_services.schema import ClientService
 
 class ClientUserBase(BaseModel):
     description: str = None
@@ -30,3 +33,7 @@ class ClientUserInDBBase(ClientUserBase):
 
 class ClientUser(ClientUserInDBBase):
     pass
+
+class ClientUserWithRelations(ClientUser):
+    frequently_askeds: Optional[List[ClientFrenquentlyAskedQuestions]] = None
+    client_services: Optional[List[ClientService]] = None
