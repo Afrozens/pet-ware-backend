@@ -18,14 +18,18 @@ class UserBase(BaseModel):
     address: str = None
 
 class UserSaveConsumer(BaseModel):
-    email: str = None
+    email: str
+    password: str
+    
+class UserSaveClient(UserSaveConsumer):
     first_name: str = None
     last_name: str = None
     phone_number: str = None
     type_document: str = None
     document: str = None
-    password: str
-
+    address: str = None
+    place_id: str = None
+    
 class UserCreate(UserBase):
     pass
 
@@ -37,9 +41,9 @@ class UserInDB(UserBase):
     roles_id: UUID4 = None
 
     created_at: str = None
-    verified_at: Optional[str] = None
-    deleted_at: Optional[str] = None
-    updated_at: Optional[str] = None
+    verified_at: str = None
+    deleted_at: str = None
+    updated_at: str = None
 
 class User(UserInDB):
     pass

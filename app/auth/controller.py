@@ -117,7 +117,7 @@ class ControllerAuth(ServiceUser):
     async def post_register_consumer(self, obj_in: UserSaveConsumer, *, background_tasks: BackgroundTasks, db: Session):
         try:
             user = await self.post_register_user(db=db, obj_in=obj_in)
-            role_customer = service_role.get_by_name(db=db, name=role_seeders.CONSUMER["name"])
+            role_customer = service_role.get_by_name(db=db, name=role_seeders.CLIENT["name"])
             data = {
                 'roles_id': role_customer.id
             }

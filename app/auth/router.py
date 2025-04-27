@@ -1,4 +1,3 @@
-import subprocess
 from fastapi import APIRouter, status, Depends, BackgroundTasks
 from fastapi.responses import JSONResponse
 from fastapi.security import OAuth2PasswordRequestForm
