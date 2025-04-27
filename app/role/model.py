@@ -4,6 +4,7 @@ from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
 
 from app.models import BaseModel
+from app.user.model import User
 
 class Rol(BaseModel):
     __tablename__ = 'roles'
@@ -14,5 +15,4 @@ class Rol(BaseModel):
     description = Column(Text)
 
     #relaciones
-
     users = relationship('User', back_populates="role", uselist=False)

@@ -4,6 +4,7 @@ from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
 
 from app.models import BaseModel
+from app.client_services.model import ClientService
 
 class Category(BaseModel):
     __tablename__ = 'categories'

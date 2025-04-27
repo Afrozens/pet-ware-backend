@@ -5,6 +5,10 @@ from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
 
 from app.models import BaseModel
+from app.file.model import File
+from app.user_history_payment.model import UserHistoryPayment
+from app.client_review_services.model import ClientReviewService
+from app.client_frequently_asked_questions.model import ClientFrequentlyAskedQuestions
 
 class User(BaseModel):
     __tablename__ = 'users'

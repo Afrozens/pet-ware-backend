@@ -5,6 +5,7 @@ from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
 
 from app.models import BaseModel
+from app.user.model import User
 
 class ClientUser(BaseModel):
     __tablename__ = 'clients_users'

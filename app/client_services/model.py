@@ -4,6 +4,8 @@ from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
 
 from app.models import BaseModel
+from app.client_user.model import ClientUser
+from app.user_service_get.model import UserServiceGet
 
 class ClientService(BaseModel):
     __tablename__ = 'clients_services'

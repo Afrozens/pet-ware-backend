@@ -4,6 +4,8 @@ from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
 
 from app.models import BaseModel
+from app.user_history_payment.model import UserHistoryPayment
+from app.history_payment.model import HistoryPayment
 
 class File(BaseModel):
     __tablename__ = 'files'
@@ -21,6 +23,6 @@ class File(BaseModel):
 
     # relations
     user = relationship("User", back_populates="files", uselist=False)
-    user_history_payment = relationship('UserHistoryPayment', back_populates="user_service_get", uselist=False)
-    history_payment = relationship('HistoryPayment', back_populates="user_service_get", uselist=False)
+    user_history_payment = relationship('UserHistoryPayment', back_populates="file", uselist=False)
+    history_payment = relationship('HistoryPayment', back_populates="file", uselist=False)
 

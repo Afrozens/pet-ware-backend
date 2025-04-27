@@ -1,87 +1,87 @@
 class Categories:
     """
-    Constantes para las diversas categorías de servicios de animales en la aplicación
+    Constants for the various categories of animal services in the application
     """
 
     CATEGORIES = [
         {
-            "name": "Paseo de perros",
-            "description": "Servicio de paseo para perros de todas las razas y tamaños."
+            "name": "dog-walking",
+            "description": "dog-walking-description"
         },
         {
-            "name": "Guardería canina",
-            "description": "Cuidado diurno o nocturno para perros en un ambiente seguro y divertido."
+            "name": "dog-daycare",
+            "description": "dog-daycare-description"
         },
         {
-            "name": "Baño y grooming",
-            "description": "Servicio de baño, corte de pelo y cuidado estético para mascotas."
+            "name": "bath-and-grooming",
+            "description": "bath-and-grooming-description"
         },
         {
-            "name": "Adiestramiento básico",
-            "description": "Entrenamiento básico de obediencia para perros."
+            "name": "basic-training",
+            "description": "basic-training-description"
         },
         {
-            "name": "Cuidado de gatos",
-            "description": "Servicio de cuidado y atención para gatos en su hogar."
+            "name": "cat-care",
+            "description": "cat-care-description"
         },
         {
-            "name": "Visita veterinaria",
-            "description": "Acompañamiento y transporte para visitas al veterinario."
+            "name": "veterinary-visit",
+            "description": "veterinary-visit-description"
         },
         {
-            "name": "Fisioterapia animal",
-            "description": "Terapias físicas para la recuperación de lesiones en animales."
+            "name": "animal-physiotherapy",
+            "description": "animal-physiotherapy-description"
         },
         {
-            "name": "Servicio de emergencia",
-            "description": "Atención y cuidado de emergencia para mascotas."
+            "name": "emergency-service",
+            "description": "emergency-service-description"
         },
         {
-            "name": "Alojamiento para mascotas",
-            "description": "Alojamiento cómodo y seguro para mascotas durante viajes."
+            "name": "pet-accommodation",
+            "description": "pet-accommodation-description"
         },
         {
-            "name": "Transporte de mascotas",
-            "description": "Servicio de transporte seguro para mascotas a cualquier destino."
+            "name": "pet-transport",
+            "description": "pet-transport-description"
         },
         {
-            "name": "Cuidado de aves",
-            "description": "Atención y cuidado especializado para aves domésticas."
+            "name": "bird-care",
+            "description": "bird-care-description"
         },
         {
-            "name": "Cuidado de reptiles",
-            "description": "Servicio especializado para el cuidado de reptiles."
+            "name": "reptile-care",
+            "description": "reptile-care-description"
         },
         {
-            "name": "Peluquería felina",
-            "description": "Servicio de grooming especializado para gatos."
+            "name": "feline-grooming",
+            "description": "feline-grooming-description"
         },
         {
-            "name": "Entrenamiento avanzado",
-            "description": "Entrenamiento avanzado para perros con necesidades específicas."
+            "name": "advanced-training",
+            "description": "advanced-training-description"
         },
         {
-            "name": "Servicio de spa para mascotas",
-            "description": "Servicio de relajación y cuidado premium para mascotas."
+            "name": "pet-spa-service",
+            "description": "pet-spa-service-description"
         },
         {
-            "name": "Cuidado de peces",
-            "description": "Mantenimiento y cuidado de acuarios y peces."
+            "name": "fish-care",
+            "description": "fish-care-description"
         },
         {
-            "name": "Servicio de fotografía para mascotas",
-            "description": "Sesiones fotográficas profesionales para mascotas."
+            "name": "pet-photography-service",
+            "description": "pet-photography-service-description"
         },
         {
-            "name": "Cuidado de animales exóticos",
-            "description": "Atención especializada para animales exóticos y no convencionales."
+            "name": "exotic-animal-care",
+            "description": "exotic-animal-care-description"
         },
         {
-            "name": "Servicio de limpieza de hábitats",
-            "description": "Limpieza y mantenimiento de hábitats para todo tipo de mascotas."
+            "name": "habitat-cleaning-service",
+            "description": "habitat-cleaning-service-description"
         },
         {
-            "name": "Servicio de alimentación especializada",
-            "description": "Preparación y suministro de dietas especiales para mascotas."
+            "name": "specialized-feeding-service",
+            "description": "specialized-feeding-service-description"
         }
     ]

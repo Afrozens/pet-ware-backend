@@ -4,6 +4,7 @@ from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
 
 from app.models import BaseModel
+from app.user_service_get.model import UserServiceGet
 
 class UserHistoryPayment(BaseModel):
     __tablename__ = 'user_history_payments'
@@ -12,7 +13,7 @@ class UserHistoryPayment(BaseModel):
         UUID(as_uuid=True), primary_key=True,  index=True, default=uuid4)
     client_id = Column(UUID(as_uuid=True), ForeignKey('clients_users.id'))
     user_id = Column(UUID(as_uuid=True), ForeignKey('users.id'))
-    user_service_get = Column(UUID(as_uuid=True), ForeignKey('user_service_gets.id'))
+    user_service_get_id = Column(UUID(as_uuid=True), ForeignKey('user_service_gets.id'))
     file_id = Column(UUID(as_uuid=True), ForeignKey('files.id'), nullable=True)
     history_payment_id = Column(UUID(as_uuid=True), ForeignKey('history_payments.id'))
     
