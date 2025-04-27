@@ -14,7 +14,7 @@ class CRUDBase(Generic[ModelType, CreateSchemaType, UpdateSchemaType]):
         self.model = model
 
     def get(self, db: Session, id: str) -> Optional[ModelType]:
-        return db.query(self.model).filter(self.model.id == id).first()
+        return db.query(self.model).filter(self.model.id == id).where(self.model.deleted_at == None).first()
 
     def create(self, db: Session, *, obj_in: CreateSchemaType) -> ModelType:
         obj_in_data = jsonable_encoder(obj_in)

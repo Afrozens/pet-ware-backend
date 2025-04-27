@@ -16,7 +16,7 @@ def _generate_tokens(user):
     access_key = unique_string(50)
     
     access_token_expires = timedelta(minutes=15)
-    refresh_token_expires = timedelta(minutes=15)
+    refresh_token_expires = timedelta(days=5)
 
     at_payload = {
         "sub": str_encode(str(user.id)),
@@ -39,21 +39,5 @@ def _generate_tokens(user):
     }
     
     response = JSONResponse(content=content)
-    response.set_cookie(
-        key="access_token",
-        value=access_token,
-        expires=access_token_expires.total_seconds(),
-        max_age=access_token_expires.total_seconds(),
-        httponly=False,
-        secure=False
-    )
-    response.set_cookie(
-        key="refresh_token",
-        value=refresh_token,
-        expires=refresh_token_expires.total_seconds(),
-        max_age=refresh_token_expires.total_seconds(),
-        httponly=False,
-        secure=False
-    )
    
     return response

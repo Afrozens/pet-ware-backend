@@ -11,17 +11,17 @@ def init_db(db: Session) -> None:
 # Create Role If They Don't Exist
     client_role = role.get_by_name(db=db, name=Role.CLIENT["name"])
     if not client_role:
-        user_role_in = Rol(
+        client_role_in = Rol(
             name=Role.CLIENT["name"], description=Role.CLIENT["description"]
         )   
-        role.create(db, obj_in=user_role_in)
+        role.create(db, obj_in=client_role_in)
 
-    service_provisioner_role = role.get_by_name(db=db, name=Role.CONSUMER["name"])
-    if not service_provisioner_role:
-        agent_role_in = Rol(
-            name=Role.CONSUMER["name"], description=Role.CONSUMER["description"]
+    professional_role = role.get_by_name(db=db, name=Role.PROFESSIONAL["name"])
+    if not professional_role:
+        professional_role_in = Rol(
+            name=Role.PROFESSIONAL["name"], description=Role.PROFESSIONAL["description"]
         )
-        role.create(db, obj_in=agent_role_in)
+        role.create(db, obj_in=professional_role_in)
 
     admin_role = role.get_by_name(db=db, name=Role.ADMINISTRATOR["name"])
     if not admin_role:
